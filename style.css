@@ -1,0 +1,35 @@
+*{margin:0;padding:0;box-sizing:border-box}
+.clearfix::after{content: '';display: block;clear: both;}
+/* clearfix 兼容IE */
+.clearfix{zoom:1}
+
+/* 控制也面最小宽度：min-width */
+.parent2{border: 1px solid green;/* min-width: 800px; */color:white;background: gray;}
+.fl{float: left;}
+.fr{float: right}
+/* 单行文字居中： height 和 line-height高度一致即可 */
+.child2:nth-child(1){background: black;width:100px;height:36px;line-height:36px;text-align: center;}
+.child2:nth-child(2){color:black;}
+/* 高度不一致的两个div居中对齐 padding弥补高度差*/
+.nav{line-height: 24px;padding: 6px 0;} /* logo 高36px  nav高24px 36-24 = 12px 则可以给nav上下padding各6px 实现对齐 */
+.nav2{display: none;}
+@media (max-width: 420px) {.nav2{display: block;} .nav{display: none;}}
+.nav>.navItem{float:left;margin:0 10px}
+
+.banner{background: graytext;width:800px;height: 300px;margin: 10px auto;}
+@media (max-width: 420px) {.banner{width: auto;}}
+
+/* 平均分布：可以让父容器左右两边各多出一个margin的值 */
+.pictures{width:800px;margin: 10px auto;/* background: #000; */}
+@media (max-width: 420px) {.pictures{width: auto;overflow: hidden;}}
+.pictures .wrapper{display: flex;flex-wrap: wrap;margin:0 -4px}
+/* calc计算属性 */
+.picture{width:calc(25% - 8px);height:194px;background: red;float:left;margin:4px;}
+@media (max-width: 420px) {.picture{width:calc(50% - 8px);}}
+
+.art{width:800px;background: graytext;display: flex;margin:0 auto;justify-content: space-between;}
+@media (max-width: 420px) {.art{width:auto;flex-direction: column;}}
+.art .slid{width:calc(33.3333% - 20px);border: 1px solid red;}
+@media (max-width: 420px) {.art .slid{width:auto;}}
+.art .main{width:66.6666%;height: 300px;border: 1px solid red;}
+@media (max-width: 420px) {.art .main{width:auto;}}
